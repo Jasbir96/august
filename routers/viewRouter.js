@@ -23,8 +23,8 @@ viewRouter.route("/login").get(getLoginPage);
 viewRouter.route("/updateUser").get(protectRoute, getUpdateUserPage);
 viewRouter.route("/signup").get(getSignupPage);
 viewRouter.route("/plans/:id").get(getPlansDetailsPage);
-viewRouter.route("/forgetPassword").get(protectRoute, getForgetPassswordPage);
-viewRouter.route("/resetPassword").get(protectRoute, getresetPassswordPage);
+viewRouter.route("/forgetPassword").get( getForgetPassswordPage);
+viewRouter.route("/resetPassword").get( getresetPassswordPage);
 viewRouter.route("").get(getHomePage);
 
 module.exports = viewRouter;
