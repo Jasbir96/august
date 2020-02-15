@@ -12,7 +12,7 @@ const {
   mymiddleware
 } = require("../controllers/planController");
 // api/plans => post
-const { protectRoute } = require("../controllers/authController");
+const { protectRoute, isAuthorized } = require("../controllers/authController");
 
 var storage = multer.diskStorage({
   filename: function (req, file, cb) {
@@ -44,10 +44,10 @@ var upload = multer({
 planRouter
   .route("")
   .get(protectRoute, getAllPlans)
-  .post(checkInput, createPlan);
+  .post(checkInput, isAuthorized(["admin","restaurant owner"]), createPlan);
 planRouter.route("/best-5-plans").get(queryAdder, getAllPlans);
 
-planRouter.post("/:id",upload.fields([{
+planRouter.post("/:id", upload.fields([{
   name: "cover", maxCount: 1
 }, {
   name: "pictures", maxCount: 3

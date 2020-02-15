@@ -3,13 +3,7 @@ const multer = require("multer");
 const path = require("path");
 // server => upload path
 
-var storage = multer.diskStorage({
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now() + ".jpeg")
-  }, destination: function (req, file, cb) {
-    cb(null, 'public');
-  }
-})
+var storage = multer.memoryStorage();
 
 const fileFilter = function (req, file, cb) {
   try{

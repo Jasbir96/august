@@ -91,7 +91,7 @@ module.exports.protectRoute = async function(req, res, next) {
       // 2. Verfiy the token{
 
       const token = req.cookies.jwt;
-
+// payload -> userId
       const ans = await jwt.verify(token, KEY);
       if (ans) {
         const user = await userModel.findById(ans.id);
@@ -143,6 +143,22 @@ await email(options);
 
   // 4. Client => email token
 };
+module.exports.isAuthorized=function(roles){
+  
+  return function(req,res,next)
+  {
+    const {role}=req.user;
+    if(roles.includes(role)){
+next();
+    }else{
+      res.json("You are not authorized")
+    }
+
+
+
+
+  }
+}
 
 module.exports.logout = function(req, res) {
   res.cookie("jwt", "jmdsfgjsdvhds", {

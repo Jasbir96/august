@@ -1,5 +1,5 @@
 const planModel = require("../models/planModel");
-
+const sharp =require("sharp");
 module.exports.getHomePage = async function(req, res) {
   const user = req.user;
   let plans = await planModel.find().limit(3);
