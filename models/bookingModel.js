@@ -20,8 +20,7 @@ const bookedPlanSchema = mongoose.Schema({
     ,
     name: {
         type: String,
-        required: [true, "Please enter Name of the plan"],
-        unique: true
+        required: [true, "Please enter Name of the plan"]
     },
     currentPrice: {
         type: Number,
