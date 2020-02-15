@@ -13,8 +13,7 @@ module.exports.updateUser = async function (req, res) {
     quality: 60
   }).toFile("public/"+req.file.fieldname + '-' + Date.now() + ".jpeg")
   req.body.photo = req.file.fieldname + '-' + Date.now() + ".jpeg";
-  const Imgfile=fs.createWriteStream(req.body.photo);
-  img.pipe(Imgfile);
+  
   const user = await userModel.findOneAndUpdate({ _id: id }, req.body, {
     new: true
   });
