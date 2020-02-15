@@ -44,9 +44,9 @@ app.use("/api/plans", planRouter);
 app.use("/api/users", userRouter);
 app.use("/api/bookings", bookingRouter);
 // wild card matching
-app.use("*",function(req,res){
-  res.render("404 Page Not found")
-})
+// app.use("*",function(req,res){
+//   res.render("404 Page Not found")
+// })
 // app.get("/plans",);
 // createPlans
 // plans/1
