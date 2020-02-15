@@ -1,11 +1,11 @@
 const express = require("express");
-
 const app = express();
 // stripe=> payment => payment?
 const cookieParser = require("cookie-parser");
 const bodyParser=require("body-parser");
 const bookingController = require("./controllers/bookingController");
 app.post("/webhook-checkout",bodyParser.raw({ type: 'application/json' }), bookingController.createBooking);
+
 // to get cookies from browser 
 //  4 routers
 
