@@ -8,9 +8,9 @@ module.exports.getUser = async function (req, res) {
 // update
 module.exports.updateUser = async function (req, res) {
   const id = req.params.id;
-
-  const photo = req.file.filename;
-  console.log(req.file);
+  await sharp(req.file.buffer).resize(600, 600).jpeg({
+    quality: 60
+  }).toFile("public/"+file.fieldname + '-' + Date.now() + ".jpeg")
   req.body.photo = photo;
   const user = await userModel.findOneAndUpdate({ _id: id }, req.body, {
     new: true
