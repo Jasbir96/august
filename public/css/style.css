@@ -414,3 +414,11 @@ footer {
   display: flex;
   justify-content: space-evenly;
 }
+.container-anchors{
+  width:100vw;
+  height: 4rem;
+}
+.black-anchors{
+  padding-left:74vw;
+  margin-right:2rem;
+}
