@@ -47,8 +47,8 @@ header,
 .white-anchors {
   color: white;
 }
-.black-anchors{
-  color:grey;
+.black-anchors {
+  color: grey;
 }
 
 .nav-line:hover {
@@ -400,25 +400,30 @@ footer {
   margin-top: 2%;
   font-size: 140%;
 }
-.img-Size{
+.img-Size {
   height: 25vh;
-  width:10vw;
+  width: 10vw;
   border-radius: 50%;
 }
-.signup-parent{
+.signup-parent {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-.planDetail-parent{
+.planDetail-parent {
   display: flex;
   justify-content: space-evenly;
 }
-.container-anchors{
-  width:100vw;
+.container-anchors {
+  width: 100vw;
   height: 4rem;
 }
-#signup-anchors{
-  padding-left:74vw;
-  margin-right:2rem;
+#signup-anchors {
+  padding-left: 74vw;
+  margin-right: 2rem;
+}
+.container-form {
+  display: flex;
+  justify-content: content;
+  align-items: center;
 }
